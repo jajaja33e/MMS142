@@ -248,12 +248,13 @@ a.btn.hero-button:focus {
 }
 
 .contact-hero h1 {
-    font-size: clamp(36px, 7vw, 100px);
+    font-size: clamp(24px, 8vw, 100px) !important;
     line-height: 1.1;
-    font-weight: 700;
+    white-space: nowrap;
     width: 100%;
     margin: 0;
-    overflow-wrap: break-word;
+    letter-spacing: -1px;
+    flex-shrink: 1;
 }
 
 .contact-hero h2 {
