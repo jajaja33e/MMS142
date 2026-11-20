@@ -422,30 +422,32 @@ a.btn.hero-button:focus {
     transition: opacity 0.3s ease;
 }
 
-
+/* PRODUCT INFORMATION SECTION */
 
 .product-information-section {
     background: #ced8d4;
-    padding: 80px 0;
     width: 100%;
+    padding: clamp(25px, 5vw, 80px) 0;
+    box-sizing: border-box;
 }
 
 .product-information-section .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding-left: clamp(12px, 3vw, 35px);
+    padding-right: clamp(12px, 3vw, 35px);
 }
 
 
-
-
 .product-introduction {
-    margin-bottom: 55px;
+    margin-bottom: clamp(25px, 4vw, 55px);
 }
 
 .product-brand {
     color: #719286;
     font-family: Georgia, serif;
-    font-size: 20px;
+    font-size: clamp(15px, 2vw, 20px);
     font-weight: 600;
     margin-bottom: 10px;
     letter-spacing: 1px;
@@ -453,8 +455,7 @@ a.btn.hero-button:focus {
 
 .product-introduction h2 {
     color: #3d665a;
-    font-family: Georgia, serif;
-    font-size: clamp(32px, 4vw, 44px);
+    font-size: clamp(26px, 4vw, 44px);
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 12px;
@@ -462,61 +463,23 @@ a.btn.hero-button:focus {
 
 .product-introduction > p:last-child {
     color: #666966;
-    font-size: 17px;
-    line-height: 1.7;
-    margin: 0;
-}
-
-.product-information-section {
-    background: #ced8d4;
-    padding: 80px 0;
-    width: 100%;
-}
-
-.product-information-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-
-.product-introduction {
-    margin-bottom: 55px;
-}
-
-.product-brand {
-    color: #719286;
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
-
-.product-introduction h2 {
-    color: #3d665a;
-    font-size: clamp(32px, 4vw, 44px);
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 12px;
-}
-
-.product-introduction > p:last-child {
-    color: #666966;
-    font-size: 17px;
+    font-size: clamp(14px, 1.5vw, 17px);
     line-height: 1.7;
     margin: 0;
 }
 
 
 .product-size-guide {
-    margin-bottom: 65px;
+    width: 100%;
+    margin-bottom: clamp(30px, 5vw, 65px);
 }
 
 .product-size-guide h3,
 .product-specifications h3 {
     color: #555a57;
-    font-size: 21px;
+    font-size: clamp(19px, 2.5vw, 24px);
     font-weight: 700;
-    margin-bottom: 25px;
+    margin-bottom: clamp(12px, 2vw, 25px);
 }
 
 
@@ -525,26 +488,27 @@ a.btn.hero-button:focus {
 .size-guide-image {
     display: block;
     width: 100%;
+    max-width: 100%;
     height: auto;
     object-fit: contain;
     background: #ffffff;
-    border-radius: 3px;
-    margin-bottom: 25px;
+    border-radius: 20px;
+    margin-bottom: clamp(15px, 3vw, 30px);
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
 }
 
 
-
-
 .table-responsive {
     width: 100%;
+    max-width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
 
 .size-chart {
     width: 100%;
-    min-width: 550px;
+    min-width: 0;
+    table-layout: fixed;
     border-collapse: collapse;
     text-align: center;
     margin-bottom: 0;
@@ -553,20 +517,22 @@ a.btn.hero-button:focus {
 
 .size-chart th {
     color: #555a57;
-    font-size: 18px;
+    font-size: clamp(10px, 1.5vw, 18px);
     font-weight: 700;
-    padding: 15px 12px;
+    padding: clamp(6px, 1.2vw, 15px) clamp(2px, 1vw, 12px);
     border: none;
     background: transparent;
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: break-word;
 }
 
 .size-chart td {
     color: #626763;
-    font-size: 18px;
-    padding: 12px;
+    font-size: clamp(11px, 1.5vw, 18px);
+    padding: clamp(6px, 1vw, 12px) 2px;
     border: none;
     background: transparent;
+    overflow-wrap: break-word;
 }
 
 .size-chart tbody tr {
@@ -577,19 +543,24 @@ a.btn.hero-button:focus {
     background: rgba(255, 255, 255, 0.25);
 }
 
-
 .product-specifications {
-    margin-top: 60px;
+    width: 100%;
+    margin-top: clamp(30px, 5vw, 60px);
 }
 
 .product-specifications h3 {
-    margin-bottom: 25px;
-    font-size: 30px;
+    font-size: clamp(23px, 3vw, 30px);
+    margin-bottom: clamp(15px, 3vw, 30px);
 }
 
 .specifications-list {
     display: grid;
-    column-gap: 60px;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 400px), 1fr)
+    );
+    column-gap: clamp(20px, 5vw, 60px);
+    row-gap: clamp(15px, 2vw, 25px);
     margin: 0;
     padding: 0;
 }
@@ -597,23 +568,30 @@ a.btn.hero-button:focus {
 .specification-item {
     display: flex;
     align-items: flex-start;
-    font-size: 24px;
-    gap: 20px;
-    padding: 0px 0;
+    gap: clamp(10px, 2vw, 20px);
+    min-width: 0;
+    padding: 5px 0;
+    border: none;
 }
 
 .specification-item dt {
     color: #3d665a;
-    font-size: 24px;
+    font-size: clamp(13px, 1.6vw, 18px);
     font-weight: 700;
-    flex: 0 0 40%;
+    flex: 0 1 40%;
+    min-width: 0;
 }
 
-
-.product-information-section {
-    box-sizing: border-box;
+.specification-item dd {
+    color: #626763;
+    font-size: clamp(12px, 1.5vw, 17px);
+    text-align: right;
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    overflow-wrap: anywhere;
 }
-
+.product-information-section,
 .product-information-section * {
     box-sizing: border-box;
 }
@@ -622,76 +600,13 @@ a.btn.hero-button:focus {
 .product-size-guide,
 .product-specifications {
     width: 100%;
-}
-
-.specification-item {
     min-width: 0;
 }
-.product-size-guide {
-    margin-bottom: 65px;
+
+.product-information-section img {
+    max-width: 100%;
 }
 
-.product-size-guide h3,
-.product-specifications h3 {
-    color: #555a57;
-    font-size: 21px;
-    font-weight: 700;
-    margin-bottom: 25px;
-}
-
-.size-guide-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    background: #ffffff;
-    border-radius: 20px;
-    margin-bottom: 30px;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
-}
-
-
-
-.table-responsive {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.size-chart {
-    width: 100%;
-    min-width: 550px;
-    border-collapse: collapse;
-    text-align: center;
-    margin-bottom: 0;
-    background: transparent;
-}
-
-.size-chart th {
-    color: #555a57;
-    font-size: 18px;
-    font-weight: 700;
-    padding: 15px 12px;
-    border: none;
-    background: transparent;
-    white-space: nowrap;
-}
-
-.size-chart td {
-    color: #626763;
-    font-size: 18px;
-    padding: 12px;
-    border: none;
-    background: transparent;
-}
-
-.size-chart tbody tr {
-    transition: background 0.2s ease;
-}
-
-.size-chart tbody tr:hover {
-    background: rgba(255, 255, 255, 0.25);
-}
 
 
 /* Terms and Condition */
